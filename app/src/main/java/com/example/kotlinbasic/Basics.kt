@@ -70,7 +70,7 @@ fun overload(job: String, language: String){
 
 
 fun overload(job: String) {
-    println("Mi work is $job")
+    println("Mi trabajo es $job")
 }
 
 fun overload(age: Int) {
