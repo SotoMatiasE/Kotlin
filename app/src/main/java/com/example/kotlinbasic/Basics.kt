@@ -13,6 +13,7 @@ fun main (){
     println() //print solo genera un salto de linea
 
     //VARIABLE LOCALES
+    newTopic(topic = "Variables")
     var age = 27 //CON var SE PUEDE CAMBIAR/EDITAR/SOBRE ESCRIBIR EJ: var age = 22
     println(age)
 
@@ -33,16 +34,20 @@ fun main (){
     //PODES USAR val PARA SOLO LECTURA PERO NO SABEMOS EL VALOR EXACTO
     //PARA USA var EN CASO DE SABER SI EL VALOR ES REASIGNABLE MAS ADELANTE
 
+
     //CONSTANTE
+    newTopic(topic = "CONSTANTES")
     println(SPECIES)
 
     //STRING TEMPLATE O DINAMICOS
     //PARA USAR LA VARIABLE DENTRO DE UN STRING UTILIZA $ MAS NOMBRE DE LA VARIABLE O CONSTANTE
+    newTopic(topic = "STRING TEMPLATE")
     println("My name is $name")
     println("My name is $username")
     println("I am $SPECIES")
 
     //TIPOS DE DATOS
+    newTopic(topic = "TIPOS DE DATOS")
     val char1: Char = 'c'
     val str: String = "chimu"
     val boolean: Boolean = true or false
@@ -53,6 +58,7 @@ fun main (){
     print("Altura: ${height}m")  //SI QUIERO AGREGAR UN STRING DESPUES DE LA VARIABLE SE ENCIERRA EN {}
 
     //LLAMANDO FUNCION DE AFUERA
+    newTopic(topic = "FUNCIONES")
     basic()
     arguments(name)
     println(returnData()) //CON ALT + ENTER CREA LA FUNCION O PROPONE SOLUCIONES
@@ -87,4 +93,9 @@ fun arguments(name: String) {
 
 fun basic(){
     println("hi")
+}
+
+fun newTopic(topic: String){
+    val separator = "===================="
+    print("\n$separator $topic $separator\n")
 }
