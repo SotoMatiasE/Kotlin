@@ -99,3 +99,9 @@ fun newTopic(topic: String){
     val separator = "===================="
     print("\n$separator $topic $separator\n")
 }
+
+const val pw = "por fin kotlin tiene oportunidad"
+fun all(){
+    val aprende = "Soto esta aprendiendo"
+    println("Macu $pw ahora $aprende")
+}
