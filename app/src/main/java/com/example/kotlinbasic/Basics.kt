@@ -68,6 +68,13 @@ fun main (){
     overload(age)
     overload(job)
     overload(job, language)
+    allBasic(language)
+}
+
+const val pw = "por fin kotlin tiene oportunidad"
+fun allBasic(language: String) {
+    val learn: String = "Soto esta aprendiendo"
+    println("Macu $pw ahora ${learn} $language")
 }
 
 fun overload(job: String, language: String){
@@ -100,8 +107,4 @@ fun newTopic(topic: String){
     print("\n$separator $topic $separator\n")
 }
 
-const val pw = "por fin kotlin tiene oportunidad"
-fun all(){
-    val aprende = "Soto esta aprendiendo"
-    println("Macu $pw ahora $aprende")
-}
+
