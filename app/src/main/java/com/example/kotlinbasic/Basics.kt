@@ -7,7 +7,7 @@ var username = "pepito"
 
 //CONSTANTE GLOBAL. UNA CONSSTANTE NO PUEDE CAMBIAR DE VALOR POR ESO SE USA const val
 const val SPECIES = "Human" // YA SABEMOS EL VALOR Y USA EL ESPACIO REQUERIDO
-
+const val SEPARATOR = "===================="
 fun main (){
     println("Basico de kotlin")
     println() //print solo genera un salto de linea
@@ -103,8 +103,11 @@ fun basic(){
 }
 
 fun newTopic(topic: String){
-    val separator = "===================="
-    print("\n$separator $topic $separator\n")
+    print("\n$SEPARATOR $topic $SEPARATOR\n")
+}
+
+fun subTopic(subtopic: String){
+    print("\n$SEPARATOR $subtopic\n")
 }
 
 
