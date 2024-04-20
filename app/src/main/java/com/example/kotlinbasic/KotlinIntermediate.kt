@@ -47,4 +47,44 @@ fun main(){
             println("if anidado")
         }
     }
+
+    // IF ELSE
+    subTopic(subtopic = "If else")
+    val a = 500
+    val b = 500
+    if (a > b){
+        println("a es mayor b")
+    }else {
+        println("a es diferente b")
+    }
+
+    if (a < b){
+        println("a es menor a b")
+    }else if (a == b){
+        println("a es igual a b")
+    }else {
+        println("a es mayor a b")
+    }
+
+    // WHEN
+    subTopic(subtopic = "When")
+        val name = "Aprendo Kotlin"
+    if (name.equals("Chimuelo")){
+        println("Hola Chimuelo")
+    }else if (name.equals("Rocio")){
+        println("Hola bb")
+    }else if (name.equals("Oliver")){
+        println("Hola Oliver")
+    }else {
+        println("sex")
+    }   //Manera poco practica
+
+    when(name){
+        "Chimuelo" -> println("Hola Chimuelo")
+        "Rocio" -> println("Hola bb")
+        "Oliver" -> println("Hola Oliver")
+        else -> println("sex")
+    }
+
+
 }
