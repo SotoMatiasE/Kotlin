@@ -154,7 +154,35 @@ fun main(){
     println("SORT: ${readOnlyList.sorted()}")  //EL METODO .sorted SE USA PARA ORDENAR ALFABETICAMENTE
     println("reverse: ${readOnlyList.reversed()}") //EL METODO .reverse ORDENA LA LISTA DE ATRAS PARA ADELANTE
     println("indexOf ${readOnlyList.indexOf("Lalito")}") //ESTE METODO MAS OCUPADO, AYUDA A UBICAR UN ELEMENTO DE ACUERDO A SU VALOR E IMPRIME LA POSICION DONDE ESTA UBICADO
+
+
+    //LOOPS
+    newTopic("Bucles")
+    loops("Soto", "Chimuelo", "Rocio", "Oliver", "Lalito", "Barti") //SE CREA UN METODO
 }
+
+fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD VARIABLE DE DATOS SEGUN EL TIPO QU ESE ELIJA STR, INT, BOOL, ETC..
+    //CICLO FOR
+    subTopic("Ciclo For")
+    for (i in 1..10){ // USANDO .. SEGUIDO DE UN NUMERO INDICA DE DONDE HASTA DONDE, "i in 1..10" ES IGUAL a "i in range 10"
+        println(i)
+    }
+    subTopic("Step 2")
+    for (i in 1..10 step 2){ // USANDO step SEGUIDO DE NUMERO recorro
+        println(i)
+    }
+    subTopic("Step 3")
+    for (i in 0..names.size -1){ // PUEDO USAR LA POSISION DEL STR PARA QUE MUESTRE NUMERO Y STR .size RETORNA EL NUMERO DONDE SE UBICA
+        println("$i = ${names.get(i)}") //-1 SE AGREGA PORQUE LA LONGITUD DE ESE ARREGLO ES DE 5, -1 ES PARA QUE NO TOME EL 0 COMO INICIAL Y CUENTE BIEN
+    }
+
+    subTopic("Step 4")
+    for (name in names) { //POR CADA NOMBRE EN NOMBRES
+        println(name)
+
+    }
+}
+
 fun  multiArgument(vararg name: String){ //LOS NOMBRES DE LA COLECCION SE ALMACENAN EN name DE ESTA FUN
     println("valarg en la posisicon 0: ${name[0]}") //DE ESTA FORMA SE ACCEDE A LA COLECCION ${name[0]}
 }
