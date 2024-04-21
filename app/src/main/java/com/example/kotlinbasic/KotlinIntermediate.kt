@@ -140,6 +140,13 @@ fun main(){
     mutableMap.remove("Pa") //ELIMINA EL ELEMENTO SEGUN SU KEY
     mutableMap.set("L", "ParaLalo") //ACTUALIZA/REEMPLAZA EL ELEMNTO
     println("remuve and set: $mutableMap")
+
+    //ARRAYS OF NULL
+    subTopic("Arrays of null")
+    val nullArray = arrayOfNulls<String>(3) //ESPACIOS RESERVADOS EN MEMORIA NECESITA EL TIPO DE DATO Y LA LONGITUD <String>(3)
+    nullArray[1] = "Chimuelo" //ASIGNACION DE DATO POR POSICION SEGUIDO DEL DATO
+    println(nullArray[1])
+    println(nullArray[0])
 }
 fun  multiArgument(vararg name: String){ //LOS NOMBRES DE LA COLECCION SE ALMACENAN EN name DE ESTA FUN
     println("valarg en la posisicon 0: ${name[0]}") //DE ESTA FORMA SE ACCEDE A LA COLECCION ${name[0]}
