@@ -147,6 +147,13 @@ fun main(){
     nullArray[1] = "Chimuelo" //ASIGNACION DE DATO POR POSICION SEGUIDO DEL DATO
     println(nullArray[1])
     println(nullArray[0])
+
+    //METHODS EN COLECCIONES
+    subTopic("METODOS EN COLECCIONES")
+    println(readOnlyList)
+    println("SORT: ${readOnlyList.sorted()}")  //EL METODO .sorted SE USA PARA ORDENAR ALFABETICAMENTE
+    println("reverse: ${readOnlyList.reversed()}") //EL METODO .reverse ORDENA LA LISTA DE ATRAS PARA ADELANTE
+    println("indexOf ${readOnlyList.indexOf("Lalito")}") //ESTE METODO MAS OCUPADO, AYUDA A UBICAR UN ELEMENTO DE ACUERDO A SU VALOR E IMPRIME LA POSICION DONDE ESTA UBICADO
 }
 fun  multiArgument(vararg name: String){ //LOS NOMBRES DE LA COLECCION SE ALMACENAN EN name DE ESTA FUN
     println("valarg en la posisicon 0: ${name[0]}") //DE ESTA FORMA SE ACCEDE A LA COLECCION ${name[0]}
