@@ -128,6 +128,18 @@ fun main(){
 
     mutableList.set(1, "Barti") // ACTUALIZAR ELEMENTO EXISTENTE, .set PIDE EL INDICE Y LUEGO EL OBJETO QUE VA A REEMPLAZAR
     println("Set: $mutableList")
+
+    //MAP
+    subTopic("mutableMap")
+    val mutableMap = mutableMapOf<String, String>() //ESTO NECESITA CALVE Y VALOR POR ESO LLEVA <String, String>
+    mutableMap.put("Chimu", "Chimuelo") //.put("") PIDE CLAVE Y VALOR PRIMERO VA LA CLAVE LUEGO EL VALOR/OBJ
+    mutableMap.put("Pa", "Lalito")
+    mutableMap.put("Ro", "Rocio")
+    println("Map $mutableMap")
+    println("Get by key ${mutableMap.get("Chimu")}") // ASI ES COMO SE ACCEDE AL OBJ USANDO SU KEY ASIGNADA EN .put
+    mutableMap.remove("Pa") //ELIMINA EL ELEMENTO SEGUN SU KEY
+    mutableMap.set("L", "ParaLalo") //ACTUALIZA/REEMPLAZA EL ELEMNTO
+    println("remuve and set: $mutableMap")
 }
 fun  multiArgument(vararg name: String){ //LOS NOMBRES DE LA COLECCION SE ALMACENAN EN name DE ESTA FUN
     println("valarg en la posisicon 0: ${name[0]}") //DE ESTA FORMA SE ACCEDE A LA COLECCION ${name[0]}
