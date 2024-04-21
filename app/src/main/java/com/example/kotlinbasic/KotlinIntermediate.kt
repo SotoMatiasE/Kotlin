@@ -111,6 +111,23 @@ fun main(){
     val readOnlyList = listOf<String>("Soto", "Chimuelo", "Rocio", "Oliver", "Lalito")
     println("Read-Only $readOnlyList")
     println("Name at 1 = ${readOnlyList.get(1)}")
+
+    //LISTAS MUTABLES
+    subTopic("mutableListOf")
+    val mutableList = mutableListOf("Soto", "Chimuelo", "Rocio", "Oliver", "Lalito")
+    println("Mutable: $mutableList")
+
+    mutableList.add("Mama ")//DE ESTA MANERA AGREGAMOS ELEMENTOS A LA LISTA
+    println("Add: $mutableList")
+
+    mutableList.removeAt(2) //DE ESTA MANERA ELIMINAMOS ELEMENTOS POR SU INDICIE 0, 1, 2
+    println("RemuveAt: $mutableList")
+
+    mutableList.remove("Soto") //DE ESTA MANERA ELIMINAMOS ELEMENTOS POR SU OBJETO O ELEMENTO STR
+    println("RemuveSTR: $mutableList")
+
+    mutableList.set(1, "Barti") // ACTUALIZAR ELEMENTO EXISTENTE, .set PIDE EL INDICE Y LUEGO EL OBJETO QUE VA A REEMPLAZAR
+    println("Set: $mutableList")
 }
 fun  multiArgument(vararg name: String){ //LOS NOMBRES DE LA COLECCION SE ALMACENAN EN name DE ESTA FUN
     println("valarg en la posisicon 0: ${name[0]}") //DE ESTA FORMA SE ACCEDE A LA COLECCION ${name[0]}
