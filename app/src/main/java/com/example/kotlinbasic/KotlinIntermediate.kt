@@ -68,23 +68,50 @@ fun main(){
 
     // WHEN
     subTopic(subtopic = "When")
-        val name = "Aprendo Kotlin"
+    val name = "Chimuelo"
     if (name.equals("Chimuelo")){
         println("Hola Chimuelo")
     }else if (name.equals("Rocio")){
         println("Hola bb")
-    }else if (name.equals("Oliver")){
+    }else if (name.equals("Oliver") || name.equals("Curso de Kotlin")){
         println("Hola Oliver")
+    }else if (name.equals("Lalito")){
+        println("Hola Lalito")
     }else {
-        println("sex")
+        println("Hola Desconocido")
     }   //Manera poco practica
 
+
+    //LA SENTENCIA WHEN SE EJECUTA HASTA MIENTRAS SEA TRUE
     when(name){
         "Chimuelo" -> println("Hola Chimuelo")
         "Rocio" -> println("Hola bb")
-        "Oliver" -> println("Hola Oliver")
-        else -> println("sex")
+        "Oliver",
+            "Curso de Kotlin" -> println("Hola Oliver")
+        "Lalito" -> println("Hola Lalito")
+        else -> println("Hola Desconocido:)")
     }
 
+    //ESTRUCTURA DE DATOS
+    newTopic(topic = "Collections")
+    //vararg admitir la declaración de una determinada función que pueda incluir una cantidad variable de argumentos
+    subTopic("Vararg")
+    multiArgument("Chimuelo", "Rocio", "Lalito", "Olver") //ESTO ES UNA COLECCION DE DATOS TIPO STR
 
+    //ARRAY coleccion de datos del mismo tipo
+    val array = arrayOf('a', 'b', 'c', 'd', 'e')
+    println(array[0])
+    println(array.get(1))
+    print(array[4])
+    val arrayStr: String = "pichichu"
+    println(arrayStr[4])
+
+    //LISTAS SOLO LECTURA
+    subTopic("LISTOFF")
+    val readOnlyList = listOf<String>("Soto", "Chimuelo", "Rocio", "Oliver")
+    println("Read-Only $readOnlyList")
+    println("Name at 1 = ${readOnlyList.get(1)}")
+}
+fun  multiArgument(vararg name: String){ //LOS NOMBRES DE LA COLECCION SE ALMACENAN EN name DE ESTA FUN
+    println("valarg en la posisicon 0: ${name[0]}") //DE ESTA FORMA SE ACCEDE A LA COLECCION ${name[0]}
 }
