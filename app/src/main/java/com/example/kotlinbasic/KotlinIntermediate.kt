@@ -179,7 +179,13 @@ fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD 
     subTopic("Step 4")
     for (name in names) { //POR CADA NOMBRE EN NOMBRES
         println(name)
+    }
 
+
+    //FOREACH
+    subTopic("Foreach") //foreach SE USA PARA ITERAR SOBRE UNA COLECCION O ELEMENTO ITERABLE SIN ACCESO AL INDICE
+    names.forEach { name -> //LA FLECHA ES LA EXPRECION lambda
+        println(name)
     }
 }
 
