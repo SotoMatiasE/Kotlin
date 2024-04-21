@@ -108,7 +108,7 @@ fun main(){
 
     //LISTAS SOLO LECTURA
     subTopic("LISTOFF")
-    val readOnlyList = listOf<String>("Soto", "Chimuelo", "Rocio", "Oliver")
+    val readOnlyList = listOf<String>("Soto", "Chimuelo", "Rocio", "Oliver", "Lalito")
     println("Read-Only $readOnlyList")
     println("Name at 1 = ${readOnlyList.get(1)}")
 }
