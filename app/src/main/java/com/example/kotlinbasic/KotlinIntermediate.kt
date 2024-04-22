@@ -164,15 +164,15 @@ fun main(){
 fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD VARIABLE DE DATOS SEGUN EL TIPO QU ESE ELIJA STR, INT, BOOL, ETC..
     //CICLO FOR
     subTopic("Ciclo For")
-    for (i in 1..10){ // USANDO .. SEGUIDO DE UN NUMERO INDICA DE DONDE HASTA DONDE, "i in 1..10" ES IGUAL a "i in range 10"
+    for (i in 1..10) { // USANDO .. SEGUIDO DE UN NUMERO INDICA DE DONDE HASTA DONDE, "i in 1..10" ES IGUAL a "i in range 10"
         println(i)
     }
     subTopic("Step 2")
-    for (i in 1..10 step 2){ // USANDO step SEGUIDO DE NUMERO recorro
+    for (i in 1..10 step 2) { // USANDO step SEGUIDO DE NUMERO recorro
         println(i)
     }
     subTopic("Step 3")
-    for (i in 0..names.size -1){ // PUEDO USAR LA POSISION DEL STR PARA QUE MUESTRE NUMERO Y STR .size RETORNA EL NUMERO DONDE SE UBICA
+    for (i in 0..names.size - 1) { // PUEDO USAR LA POSISION DEL STR PARA QUE MUESTRE NUMERO Y STR .size RETORNA EL NUMERO DONDE SE UBICA
         println("$i = ${names.get(i)}") //-1 SE AGREGA PORQUE LA LONGITUD DE ESE ARREGLO ES DE 5, -1 ES PARA QUE NO TOME EL 0 COMO INICIAL Y CUENTE BIEN
     }
 
@@ -188,7 +188,7 @@ fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD 
         println(name)
     }
     //TRABAJAR CON RANGOS EN FOREACH
-    (1..5).forEach{
+    (1..5).forEach {
         println(it)
     }
 
@@ -196,12 +196,12 @@ fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD 
     subTopic("While") //
     var index = 0 //USAMOS var PORQUE EL VALOR SE VA A ALTERAR
     println(names.size) //LONG DE LA LISTA
-    while (index < names.size){ //MIENTRAS index = 0 SEA < a names.size(names.size es la lista)
+    while (index < names.size) { //MIENTRAS index = 0 SEA < a names.size(names.size es la lista)
         println("index: $index")
         println("name at index: ${names.get(index)}")
         //index = index + 1 //INCREMENTO EN 1 AL VALOR DE index
         index++ //ESTA MANEA OPTIMISAMOS CODIGO Y FUNCIONA IGUAL QUE index = index + 1
-                // ++ es incrementeal y  -- decrementa index++ o index--
+        // ++ es incrementeal y  -- decrementa index++ o index--
     }
 
     //DO WHILE
@@ -213,6 +213,46 @@ fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD 
         println("index $index")
         println("name at index: ${names.get(index)}")
     } while (index > 0) //DESPUES COMPARA
+
+    //RETURN
+    subTopic("Return")
+
+    (1..5).forEach {
+        if (it == 3) { //EN LA CONDICION EL 3 SE SALTA PORQUE ENTRA AL return@forEach
+            //return //SI USO return EL CICLO SE FRENA Y NO CONTINUA CONTANDO
+            return@forEach
+        }
+        println(it)
+    }
+
+    //BREAK
+    //forEach NO FUNCIONA EN EL BREAK
+    subTopic("Break")
+    for (i in 1..5){
+        if (i == 3){
+            break
+        }
+        println(i)
+    }
+    //CONTINUE pasa el control a la siguiente iteración de la instrucción de inclusión do , for o while
+    /***subTopic("Continue")
+    for (i in 1..5){
+        if (i == 3){
+            continue
+        }
+        println(i)
+    }***/
+
+    index = names.size
+    do { //PRIMERO EJECUTA
+        index-- //SE DECREMENTA PORQUE EMPIEZA CON LOS DATOS CARGADOS DE index++
+        if (index < 0) {
+            break
+        }
+        println("index $index")
+        println("name at index: ${names.get(index)}")
+    } while (index >= 0)
+
 }
 
 fun  multiArgument(vararg name: String){ //LOS NOMBRES DE LA COLECCION SE ALMACENAN EN name DE ESTA FUN
