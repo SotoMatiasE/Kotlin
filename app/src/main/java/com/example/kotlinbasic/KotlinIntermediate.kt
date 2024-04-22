@@ -187,6 +187,20 @@ fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD 
     names.forEach { name -> //LA FLECHA ES LA EXPRECION lambda
         println(name)
     }
+    //TRABAJAR CON RANGOS EN FOREACH
+    (1..5).forEach{
+        println(it)
+    }
+
+    //WHILE
+    subTopic("While") //
+    var index = 0
+    println(names.size)
+    while (index < names.size){
+        println("index: $index")
+        println("name at index: ${names.get(index)}")
+        index = index + 1
+    }
 }
 
 fun  multiArgument(vararg name: String){ //LOS NOMBRES DE LA COLECCION SE ALMACENAN EN name DE ESTA FUN
