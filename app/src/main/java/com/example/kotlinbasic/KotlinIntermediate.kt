@@ -194,13 +194,25 @@ fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD 
 
     //WHILE
     subTopic("While") //
-    var index = 0
-    println(names.size)
-    while (index < names.size){
+    var index = 0 //USAMOS var PORQUE EL VALOR SE VA A ALTERAR
+    println(names.size) //LONG DE LA LISTA
+    while (index < names.size){ //MIENTRAS index = 0 SEA < a names.size(names.size es la lista)
         println("index: $index")
         println("name at index: ${names.get(index)}")
-        index = index + 1
+        //index = index + 1 //INCREMENTO EN 1 AL VALOR DE index
+        index++ //ESTA MANEA OPTIMISAMOS CODIGO Y FUNCIONA IGUAL QUE index = index + 1
+                // ++ es incrementeal y  -- decrementa index++ o index--
     }
+
+    //DO WHILE
+    subTopic("do While") //SE EJECUTA SIEMPRE AL MENOS UNA VEZ
+    //PRIMERO SE PONE EL BLOQUE DE ODIGO QUE QUIERO QUE SE EJECUTE, INDEPENDIENTEMENTE DE LA COMPARACION
+    //EMPEZAMOS AL REVEZ, LO QUE SE EJECUTA SI O SI Y LUEGO EL while
+    do { //PRIMERO EJECUTA
+        index-- //SE DECREMENTA PORQUE EMPIEZA CON LOS DATOS CARGADOS DE index++
+        println("index $index")
+        println("name at index: ${names.get(index)}")
+    } while (index > 0) //DESPUES COMPARA
 }
 
 fun  multiArgument(vararg name: String){ //LOS NOMBRES DE LA COLECCION SE ALMACENAN EN name DE ESTA FUN
