@@ -228,8 +228,8 @@ fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD 
     //BREAK
     //forEach NO FUNCIONA EN EL BREAK
     subTopic("Break")
-    for (i in 1..5){
-        if (i == 3){
+    for (i in 1..5) {
+        if (i == 3) {
             break
         }
         println(i)
@@ -237,10 +237,10 @@ fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD 
     //CONTINUE pasa el control a la siguiente iteración de la instrucción de inclusión do , for o while
     /***subTopic("Continue")
     for (i in 1..5){
-        if (i == 3){
-            continue
-        }
-        println(i)
+    if (i == 3){
+    continue
+    }
+    println(i)
     }***/
 
     index = names.size
@@ -253,6 +253,18 @@ fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD 
         println("name at index: ${names.get(index)}")
     } while (index >= 0)
 
+    //TAREA
+    subTopic("Tarea")
+    val taskOrdinaryList = mutableListOf("Soto", "Chimuelo", "Rocio", "Oliver", "Lalito")
+    taskOrdinaryList.forEach {
+        if (it == "Rocio") {
+            println(it)
+        } else if (it == "Lalito") {
+            println(it)
+        } else {
+            println("No hay coincidencia")
+        }
+    }
 }
 
 fun  multiArgument(vararg name: String){ //LOS NOMBRES DE LA COLECCION SE ALMACENAN EN name DE ESTA FUN
