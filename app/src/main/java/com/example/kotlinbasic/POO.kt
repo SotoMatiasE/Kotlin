@@ -84,4 +84,19 @@ fun main(){
     //INNER CLASS
     subTopic("Inner")
     println(teacher.classroom.getInfo())
+
+    //INTERFACE
+    //ES UNA CLASE INTERMEDIARIA QUE PUEDE MODIFICAR LA FORMA EN QUE VEMOS UNA CLASE
+    //SOLO LO QUE SE DEFINE EN LA INTERFAZ ES LO QUE SE PUEDE VER DENTRO DE OTRA CLASE QUE LLAMEN A
+    //ESA CLASE PERO COMO INSTANCIA DE LA INTERFAZ
+    subTopic("Interface")
+    teacher.salary = 1000f
+    val boss: Boss = teacher //TEACHER SE INCLUYE YA QUE TIENE LAS CLASES INTERFACE INCLUIDAS EN EL OBJ
+    println(boss.namePerson())
+    println(boss.netSalary())
+
+    //DATA CLASS
+    //Clase enfocada en modelo de datos
+    subTopic("Data class")
+
 }

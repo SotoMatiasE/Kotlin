@@ -4,11 +4,16 @@ package com.example.kotlinbasic
 //LUEGO FUERA DE PARENTESIS : Y LA CLASE PADRE ()
 //return super.showWork() SUPER ES REFERENCIA A LA CLASE PADRE
 
-class Teacher(firstName:String, lastName: String, var students: Short) : Person(firstName, lastName) {
+class Teacher(firstName:String, lastName: String, var students: Short) : Person(firstName, lastName),
+    Boss {
     var classroom: ClassRoom = ClassRoom(("N/A"))
     override fun showWork(): String {
         return super.showWork() + "\nDando clases.."
     }
+    //INTERFACE BOSS
+    override fun namePerson(): String = getFullName()
+    //INTERFACE BOSS
+    override fun netSalary(): Float = salary
 
     //CLASE ANIDADA + INNER CLASS
     //INNER ES UN TIPO PARA ACCEDER A LAS PROPIEDADES DE LA CLASE PADRE
