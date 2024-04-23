@@ -40,4 +40,9 @@ fun main(){
     subTopic("Get & Set")
     person.tax = 20f
     println(person.salary)
+
+    //HERENCIA
+    //PERMITE QUE UNA CLASE HEREDE DE OTRA Y ADQUIERA PROPIEDADES Y METODOS Y ANEXAR O MODIFICAR GRACIAS A OVERRIDE
+    subTopic("Herencia")
+
 }
