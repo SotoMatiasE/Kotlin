@@ -16,7 +16,7 @@ open class Person(val firstName:String, val lastName: String) {
 
     //DECLARACION DEL METODO
     fun getFullName(): String = "$firstName $lastName"
-    fun showWoerk(): String{
+    open fun showWork(): String{
         return "Capturando Datos..."
     }
 }
