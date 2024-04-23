@@ -49,6 +49,9 @@ fun main(){
     val admin = Admin("Jose", "Lui", 1) //CREANDO ADMINISTRATIVO
     highSchool.staff.add(admin)
     println(highSchool)
-    println(admin.showWork())
 
+    //SUPER
+    subTopic("SUPER")
+    println("Admin: ${admin.showWork()}")
+    println("Teacher: ${teacher.showWork()}")
 }
