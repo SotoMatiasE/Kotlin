@@ -3,7 +3,8 @@ package com.example.kotlinbasic
 //EL OBJETO persona TIENE LAS PROPIEDADES "firstName" "lasName" "tax: Float" "salary: Float"
 //Y PUEDE HACER LO QUE DICE EN "fun"
 //open HABILITA LA HERENCIA DE ESTE OBJ
-open class Person(val firstName:String, val lastName: String) {
+//ATRIBUTO private SE ASIGNA ANTES DE DECLARAR LA PROPIEDAD DEL OBJ
+open class Person(val firstName:String, private val lastName: String) {
     //AGREGARMOS PROPIEDAD = SE INICIALIZA "10.0f"
     var tax: Float  = 10.0f
     get() = 1 -(field*0.01f) //field HACE REFERENCIA A LA MISMA VARIABLE

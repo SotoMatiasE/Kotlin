@@ -7,7 +7,7 @@ var username = "pepito"
 
 //CONSTANTE GLOBAL. UNA CONSSTANTE NO PUEDE CAMBIAR DE VALOR POR ESO SE USA const val
 const val SPECIES = "Human" // YA SABEMOS EL VALOR Y USA EL ESPACIO REQUERIDO
-const val SEPARATOR = "===================="
+private const val SEPARATOR = "===================="
 fun main (){
     println("Basico de kotlin")
     println() //print solo genera un salto de linea

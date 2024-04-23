@@ -54,4 +54,14 @@ fun main(){
     subTopic("SUPER")
     println("Admin: ${admin.showWork()}")
     println("Teacher: ${teacher.showWork()}")
+
+    //ENCAPSULAMIENTO-VISIBILIDAD
+    //PODER MODIFICAR LA VISIBILIDAD DENTRO DE LA CLASE SEA PROPIEDADES O METODOS
+    //CON EL FIN DE QUE EL RESTO DE LAS CLASES DEL PROYECTO VEAN LO QUE SE REQUIRE
+    //SI QUIERO HACER UN METODO PRIVADO O PUBLICO DEBO IR AL OBJETO PADRE
+    subTopic("Encapsulamiento-Visibilidad")
+    println(teacher.firstName)
+    //println(teacher.lastName)
+
+
 }
