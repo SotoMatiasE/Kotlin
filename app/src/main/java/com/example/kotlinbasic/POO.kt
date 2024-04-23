@@ -34,4 +34,10 @@ fun main(){
     println(person.showWoerk())
     person.salary = 1000f
     println(person.salary)
+
+    //GET & SET
+    //ESTOS METODOS NOS AYUDAN A PROCESAR LOS DATOS ANTES O DESPUES DE ASIGNAR UN VALOR
+    subTopic("Get & Set")
+    person.tax = 20f
+    println(person.salary)
 }
