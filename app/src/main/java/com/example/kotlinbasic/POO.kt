@@ -80,4 +80,8 @@ fun main(){
     println(teacher.classroom)
     teacher.classroom.key = "3°C"
     println(teacher.classroom)
+
+    //INNER CLASS
+    subTopic("Inner")
+    println(teacher.classroom.getInfo())
 }

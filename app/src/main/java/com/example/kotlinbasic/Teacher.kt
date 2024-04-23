@@ -10,9 +10,13 @@ class Teacher(firstName:String, lastName: String, var students: Short) : Person(
         return super.showWork() + "\nDando clases.."
     }
 
-    class ClassRoom(var key: String){ //CLASE ANIDADA
+    //CLASE ANIDADA + INNER CLASS
+    //INNER ES UN TIPO PARA ACCEDER A LAS PROPIEDADES DE LA CLASE PADRE
+    inner class ClassRoom(var key: String){ //CLASE ANIDADA
         override fun toString(): String {
             return "ClassRoom: $key"
         }
+        //AHORA PUEDO CREAR UN METODO DENTRO DE LA CLASE ANIDADA
+        fun getInfo(): String = "Classroom ${key} whit Teacher $firstName and $students students"
     }
 }
