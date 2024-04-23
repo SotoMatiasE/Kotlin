@@ -8,6 +8,7 @@ package com.example.kotlinbasic
 class School(var name: String, var address: String, val active: Boolean = true, var numCode: String ="") { //OBJETO TIPO School CON LA PROPIEDAD name DENTRO DE ESTA MANERA OBLIGAMOS QUE INICIE CON UN VALOR
     var staff: MutableList<Person> //ESTO NO ESTA DECLARADO EN EL constructor, PARA INICIALIZARLO USAMOS EL METODO init
 
+
     init { //init FUNCIONA COMO EL METODO main, SE EJECUTA AL INICIO POR DEFECTO
         staff = mutableListOf() //ES DECIR, UNA NUEVA INSTANCIA DE UN ARREGLO DE TIPO mutableList
     }
@@ -28,5 +29,11 @@ class School(var name: String, var address: String, val active: Boolean = true, 
         }else{
             return "Escuela inactiva2222"
         }
+    }
+
+    //USANDO companion object NO ES NECESARIO CREAR UNA INSTANCIA PARA USAR LA CONSTANTE
+    companion object{
+        const val ACTIVE = true
+        const val INACTIVE = false
     }
 }

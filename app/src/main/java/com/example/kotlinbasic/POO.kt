@@ -16,7 +16,7 @@ fun main(){
     //OVERRIDE
     //SIGNIFICA QUE SE SOBRE ESCRIBE ALGO QUE YA ESTABA EN LA CLASE
     subTopic("Override")
-    val schoolInactive = School("Nacho", "Calle Don Bosco 255", false)
+    val schoolInactive = School("Nacho", "Calle Don Bosco 255", School.INACTIVE)
     println(schoolInactive)
 
     //THIS
@@ -63,5 +63,10 @@ fun main(){
     println(teacher.firstName)
     //println(teacher.lastName)
 
-
+    //COMPANION OBJ
+    //ES UNA FORMA QUE KOTLIN TRATA CON LAS PROPIEDADES ESTATICAS QUE PUEDEN ESTAR DISPONIBLES PARA EL RESTO DEL CODIGO
+    subTopic("Companion Objet")
+    println(School.ACTIVE)
+    val schoolActive = School("sex", "avenida", School.ACTIVE)
+    println(schoolActive)
 }
