@@ -75,4 +75,9 @@ fun main(){
     schoolActive.setType(TypeSchool.PRIVATE)
     println(schoolActive.getType())
 
+    //CLASE ANIDADA
+    subTopic("Clase Anidada")
+    println(teacher.classroom)
+    teacher.classroom.key = "3°C"
+    println(teacher.classroom)
 }
