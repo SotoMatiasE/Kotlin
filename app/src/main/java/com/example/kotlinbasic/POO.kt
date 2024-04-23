@@ -69,4 +69,10 @@ fun main(){
     println(School.ACTIVE)
     val schoolActive = School("sex", "avenida", School.ACTIVE)
     println(schoolActive)
+
+    //ENUMS Tipo de archivo PARA AQUELLOS DATOS QUE NO VAN A CAMBIAR
+    subTopic("Enum")
+    schoolActive.setType(TypeSchool.PRIVATE)
+    println(schoolActive.getType())
+
 }
