@@ -26,4 +26,12 @@ fun main(){
     val highSchool = School("Pepito", "Sanlo 233" ,
         mutableListOf(Person("Jose", "Linares")))
     println(highSchool)
+
+    //PORPERIES AND METHODS
+    subTopic("Metodos y Propiedades")
+    val person = Person("Jose", "Linares")
+    println(person.getFullName())
+    println(person.showWoerk())
+    person.salary = 1000f
+    println(person.salary)
 }
