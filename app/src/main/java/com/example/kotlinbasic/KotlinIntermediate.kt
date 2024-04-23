@@ -262,7 +262,7 @@ fun loops(vararg names: String) {  //vararg HACE QUE PUEDA RECIBIR UNA CANTIDAD 
         } else if (it == "Lalito") {
             println(it)
         } else {
-            println("No hay coincidencia")
+            println("No hay coincidenciahjgfhgfhg")
         }
     }
 }
