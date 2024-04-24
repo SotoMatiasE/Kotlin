@@ -106,4 +106,19 @@ fun main(){
     schoolCopy.name = "Leolargo" //REEMPLAZO EL VALOR DE LA PROPIEDAD name GRACIAS A data class
     print(schoolCopy)
 
+    //EQUAL & HASHCODE(metodos de data class)
+    /*SON PARA DIFERENCIA UN OBJ DE OTRO, AL DECLARAR LA CLASE COMO data class OBTENEMOS METODOS
+    * EQUALS Y HASHCODE: LO QUE HACEN ES GENERAR CODIGO PARA EVALUAR SI UN OBJ ES IGUAL O NO A OTRO*/
+    subTopic("Equal & Hashcode")
+    schoolActive.numCode = "223"
+    schoolCopy.numCode = "442"
+    println(schoolActive.equals(schoolCopy))
+
+    //TAREA POO
+    subTopic("Tarea POO")
+    val adu = Adulto("Soto", "Responsabilidad de adulto", 27)
+    println(adu.getAdulto())
+    println("Soto: ${adu.respons1()} \n ${adu.paseoPerro} \n ${adu.goWork}")
+    val home = Responsability("Soto", "En casa", "debe limpiar el piso", 27)
+    println("Cuando llego a mi casa ${home.homeWork}")
 }

@@ -37,9 +37,26 @@ data class School(var name: String, var address: String, val active: Boolean = t
     }
     fun getType(): String = typeSchool.type //ESTO HACE QUE EL METODO PRIVADO PUEDA SE USADO
 
+    /*DENTRO DEL OBJ CON CLICK DERECHO O Alt+insert GENERAR PUEDO ACCEDER A equals & hashcode QUE NOS GENERA
+    LA FUNCION override fun equals*/
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as School
+
+        return numCode == other.numCode
+    }
+    override fun hashCode(): Int {
+        return numCode.hashCode()
+    }
+
+
+
     //USANDO companion object NO ES NECESARIO CREAR UNA INSTANCIA PARA USAR LA CONSTANTE
     companion object{
         const val ACTIVE = true
         const val INACTIVE = false
     }
+
 }
