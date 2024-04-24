@@ -2,11 +2,12 @@ package com.example.kotlinbasic
 
 import java.util.EnumSet
 
+private var nullStrGlobal: String? = null
+
 fun main(){
     newTopic("Metodo de String")
     //0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34
     //K o t l i n  c o u r e s e  b y  C u r s o s  A n d r o i d  A N T
-    val i = Int
     val course = "Kotlin courese by Curso Android ANT"
     val target = "Android"
     println(course.length)
@@ -33,4 +34,85 @@ fun main(){
     println(course.substring(course.lastIndexOf("A", course.length)))//INDICA DE QUE LETRA HASTRA EL FINAL DE LA CADENA VA A MOSTRAR
     println(course.trim())//QUITA LOS ESPACIOS AL INICIO Y AL FINAL DE LA CADENA
 
+    //NULABLE ? !!
+    newTopic("Null safety")
+    subTopic("? PARA PODER DECLARAR UNA VARIABLE QUE INICIA COMO null O QUE PUEDA CONTENER null SE UTILIZA ?")
+    var nullStr: String? = null //PARA PODER DECLARAR UNA VARIABLE QUE INICIA COMO null O QUE PUEDA CONTENER null SE UTILIZA ?
+    nullStr = "Kotlin"
+    println(nullStr?.get(0)) //ANTES DE LLAMAR AL METODO get DEBEMOS VERIFICAR QUE NO ES null ANTES DE LLAMAR AL METODO PARA ESO USAMOS ? EN LA VARIABLE
+    println(nullStrGlobal?.reversed())
+
+    subTopic("!! ESTE DOBLE SIGNO ASEGURA QUE NO SEA NULO")
+    nullStr = null
+    showmessage(nullStr)
+    nullStrGlobal = null
+    showmessage("Kotlin")
+
+    //EVITAR NULOS
+    subTopic("elvis operator ESTA DEFINIDO POR ?:, PARA VALIDAR UN VALOR Y ASIGNAR UNO POR DEFAULT ?: ESTOS SIMBOLOS EVALUAN SI ES NULO EN CASO DE SERLO LO COMPLETA CON EL DEFAULT")
+    val elvis = nullStrGlobal ?: "Java"
+    println("Yo programo en $elvis")
+
+    val noElvis = if (nullStrGlobal != null) {
+        nullStrGlobal
+    }else{
+        "Java"
+    }
+    println("Yo programo en $noElvis")
+
+    //COMO PROCESAR DATOSEN TIEMPO REAL DE LA TERMINAL DE ANDROID
+    //READLINE
+    subTopic("Readline")
+    println("Inserte un numero: ")
+    val first = readLine() //readLine ESPERTA UN VALOR,CAPTURA EL VALOR INGRESADO Y LO ALMACENA EN first EN FORMATO STRING
+    val a = first!!.toInt() //first NO PUEDE SER NULO POR ESO SE AGREGA !! Y SE CONVIERTE EN ENTERO CON  toInt Y LO ALMACENA EN a
+    println("a = $a")
+    print("Inserte el segundo numero: ")
+    val second = readLine() //
+    val b = second!!.toInt() //b ALMACENA EL VALOR INGRESAD DE second
+    println("b = $b")
+    println("a + b = ${a + b}")
 }
+
+
+//FUNCION PRIVADA
+private fun showmessage(msg: String?){
+    println("? ${msg?.get(0)}")
+
+    //VALIDAMOS SI ES DIFERENTE DE null
+    if (msg!= null){
+        println("! ${msg.get(0)}")
+    }
+    //AHORA VALIDAMOS A nullStrGlobal QUE NO SEA NULO
+    if (nullStrGlobal!= null){
+        println("g!! ${nullStrGlobal!!.get(0)}" )
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
