@@ -71,7 +71,27 @@ fun main(){
     val second = readLine() //
     val b = second!!.toInt() //b ALMACENA EL VALOR INGRESAD DE second
     println("b = $b")
+
+
+    //OPERADORES MATEMATICOS
+    newTopic("Operadores Matematicos")
     println("a + b = ${a + b}")
+    println("a - b = ${a - b}")
+    println("a * b = ${a * b}")
+    println("a / b = ${a / b}")
+    println("a % b = ${a % b}")
+
+    //SMART CAST
+    newTopic("SAFE CSAT VA A ENGLOBAR TODO LO QUE QUIERA CONVERTIRSE DE UN TIPO DE DATO A OTRO")
+    subTopic("Smart Cast")
+    var obj: Any = "Kotlin course" //DE TIPO Any SIGNIFICA QUE PUEDE SER DE CALQUIER TICO QUE EXISTE
+    //println(obj.toString().toInt() * b)
+    val objNum: Any = 3
+    if (objNum is Int) { //KOTLIN CMBIERTE DE MANERA TEMPORAL EL VALOR DE Any
+        println(objNum.toString().toInt() * b) //ACA MULTIPLICAMOS EL VALOR DE obj POR EL INGRESO DE a y b
+    }else {
+        println("obj no es un numero")
+    }
 }
 
 
