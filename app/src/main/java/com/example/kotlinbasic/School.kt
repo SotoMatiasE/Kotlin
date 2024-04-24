@@ -5,7 +5,7 @@ package com.example.kotlinbasic
 //PODEMOS TENER PROPIEDADES Y FUNCIONES
 //SI NO SE INICIA CON UN VALOR SE PUEDE INICIALIZAR EN EL CONSTRUCTOR
 //TAMBIEN PODEMOS TENER MAS DE UN constructor
-class School(var name: String, var address: String, val active: Boolean = true, var numCode: String ="") { //OBJETO TIPO School CON LA PROPIEDAD name DENTRO DE ESTA MANERA OBLIGAMOS QUE INICIE CON UN VALOR
+data class School(var name: String, var address: String, val active: Boolean = true, var numCode: String ="") { //OBJETO TIPO School CON LA PROPIEDAD name DENTRO DE ESTA MANERA OBLIGAMOS QUE INICIE CON UN VALOR
     var staff: MutableList<Person> //ESTO NO ESTA DECLARADO EN EL constructor, PARA INICIALIZARLO USAMOS EL METODO init
 
     private var typeSchool: TypeSchool = TypeSchool.FEDERAL
@@ -20,7 +20,7 @@ class School(var name: String, var address: String, val active: Boolean = true, 
         this.staff = staff //PARA ACCEDER A LA CLASE USAMOS this.PARA DIFERENCIAR Y ACCEDER A LA CLASE UNICAMENTE
     }
 
-    override fun toString(): String {
+    /*override fun toString(): String {
         if (active){
             return if (staff.size > 0) {
                 "name: $name at $address, with ${staff.size} members"
@@ -30,7 +30,7 @@ class School(var name: String, var address: String, val active: Boolean = true, 
         }else{
             return "Escuela inactiva2222"
         }
-    }
+    }*/
 
     fun setType(typeSchool: TypeSchool){
         this.typeSchool = typeSchool

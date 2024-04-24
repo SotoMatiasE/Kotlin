@@ -96,7 +96,14 @@ fun main(){
     println(boss.netSalary())
 
     //DATA CLASS
-    //Clase enfocada en modelo de datos
+//    Clase enfocada en modelo de datos, son aquellas clases que definen un OBJ como tal
+//    PARA USAR data TENEMOS QUE USARLA EN UNA CLASE ANTES DE LA PALABRA class ej: data clase School
+//    UNA VEZ DECLARADO data DELANTE DE class SE GENERAN UNOS METODOS
     subTopic("Data class")
+    println(schoolActive)
+    println(schoolActive.component1()) //METODOS NUEVOS POR USAR data
+    val schoolCopy = schoolActive.copy() //COPIAMOS TODAS LAS PROPIEDADES
+    schoolCopy.name = "Leolargo" //REEMPLAZO EL VALOR DE LA PROPIEDAD name GRACIAS A data class
+    print(schoolCopy)
 
 }
