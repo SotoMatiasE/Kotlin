@@ -64,7 +64,7 @@ fun main(){
     //READLINE
     subTopic("Readline")
     println("Inserte un numero: ")
-    val first = readLine() //readLine ESPERTA UN VALOR,CAPTURA EL VALOR INGRESADO Y LO ALMACENA EN first EN FORMATO STRING
+    val first = readLine() //readLine ESPERA UN VALOR,CAPTURA EL VALOR INGRESADO Y LO ALMACENA EN first EN FORMATO STRING
     val a = first!!.toInt() //first NO PUEDE SER NULO POR ESO SE AGREGA !! Y SE CONVIERTE EN ENTERO CON  toInt Y LO ALMACENA EN a
     println("a = $a")
     print("Inserte el segundo numero: ")
@@ -127,6 +127,37 @@ fun main(){
     } finally {
         println("Tarea finalizada")
     }
+
+    //INFIX(EXTENSION) crea una funcion que este como extencion de una clase, podemos tener una clase que le falta un metodo
+    // y de forma temporal o local se puede crear
+    subTopic("Infix Extension")
+    val name = "Android"
+    println(name.toUpperCase())
+    println(name.toLowerCase())
+    println(name.toMixCase(true))
+}
+
+private infix fun String.toMixCase(firstUpper: Boolean): String{
+    var mixString = ""
+    var index = 0           //Primero pone los valores en 0 o vacio
+    var module = 0
+    if(firstUpper){ //PREGUNTA SI EL PRIMERO ES MAYUSCULA O MINUSCULA...SI "firstUpper" es falso ES MINUSCULA Y EL MODULO ES 1 NUMEROS PARES EN while
+        this.toUpperCase() //this SE REFIERE AL CONTEXTO ACTUAL EN ESTE CASO HACE REFERENCIA AL STRING name ES COMO PONER "println(name.toUpperCase())"
+    }else{
+        this.toLowerCase()
+    }
+
+    while(index < this.length){ //MIENTRAS index SEA MENOR A LA LONGITUD DE this
+        if(index % 2 == module){
+            mixString += this.get(index).toUpperCase() //+= ACUMULA DATOS
+        }else {
+            mixString += this.get(index).toLowerCase()
+            module = 1
+        }
+        index++
+    }
+
+    return mixString
 }
 
 //FUNCION PARA THROW
