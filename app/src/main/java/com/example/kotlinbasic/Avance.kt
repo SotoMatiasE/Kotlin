@@ -4,6 +4,9 @@ import java.util.EnumSet
 
 private var nullStrGlobal: String? = null
 private lateinit var lateinitGlobal:  String
+private val lazyGlobal: Any by lazy { /*aca se inicializa*/ "gLazyKotlin"  }
+//lateinit SOLO FUNCIONA CON var PORQUE NECESITA CAMBIAR EL VALOR DE LA VARIABLE Y lazy FUNCIONA CON val PORQUE SOLO ES LECTURA
+
 
 fun main(){
     newTopic("Metodo de String")
@@ -141,10 +144,81 @@ fun main(){
     //LAZY AND LATEINIT
     newTopic("Asignacion tardia lateinit")
     subTopic("Lateinit SOLO SE APLICAN A VARIABLES GLOBALES, NOS PERMITE DECLARAR UNA VARIABLE QUE DE MOMENTO NO PUEDE CONTENER VALOR")
+    if (setValueforLateinit()){
+        println(lateinitGlobal)
+        println(lateinitGlobal.toMixCase(true))
+    }
 
+    subTopic("Lazy")
+    println(lazyGlobal)
+    //lazyGlobal = "f"
+
+    //SCOPE FUNCTIONS
+    newTopic("Funciones de alcance")
+    val highSchool = School("Pepito", "Sanlo 233" ,
+        mutableListOf(Person("Jose", "Linares")))
+    val teacher = Teacher("Leo" , "Quiroga", 45) //CREACION DEL MAESTRO
+    val admin = Admin("Jose", "Lui", 1) //CREANDO ADMINISTRATIVO
+
+    //WITH MANDA A LLAMAR OBJETOS!!!
+    subTopic("With ESTO SE UTILIZA PARA MANADR A LLAMAR UN METODOS SIN RESTULTADO DIRECTO DEL OBJ")
+    with(highSchool){  //Entre () se asigna el obj a trabajar. Con (obj) hacer bloque de codigo
+        println("Este obj imprime todo esto:")
+        println(getType()) //
+        println(toString())
+        println()
+    }
+
+    //APPLY Aplica las siguentes configuraciones
+    subTopic("Apply, UTILIZA PARA MODIFICAR EL VALOR DE LAS PROPIEDADES DEL OBJ")
+    teacher.apply {
+        classroom.key = "4°B"
+        salary = 2000f
+    }
+    println(teacher.classroom.key)
+    println(teacher.salary)
+    println("Vaores asignados correctamente con apply")
+
+    //RUN PUEDO ASIGNAR PROPIEDADES Y AL MISMO TIEMPO MANDAR A LLAMAR METODOS
+    subTopic("Run, SE RECOMPIENDA PARA EJECUTAR UN BLOQUE DE CODIGO MAS COMPLEJO RELACIONADO AL OBJ")
+    highSchool.run { //imprime todo el obj
+        println("Ejecuta el siguento bloque de codigo en el OBJ")
+        staff.add(teacher) //asignacion
+        staff.add(admin) //asignacion
+        println("Members: ${staff.size}") //total del staff
+        println(this)
+    }
+
+    //Let Permite ejecutar un bloque de codigo a un obj no null(verifica con ?)
+    subTopic("Let, SE RECOMIENDA UTILIZAR PARA EJECUTAR UN BLOQUE DE CODIGO CUANDO UN OBJ NO ES NULO ?")
+    var school: School? = null
+    school = createSchool()
+    school?.let { //SI LA ESCUELA ES DIFERENTE DE null "school?." HAS LO SIGUENTE ".let"
+        school.staff.add(admin)
+        println("si el obj es diferente de null, imprimilo: $it")
+    }
+
+    //Also. Ademas ejecuta el siguente codigo
+    subTopic("Also, SE RECOMIENDA USAR PARA AÑADIR UNA COFIGURACION O PROCESO DONDE SE NECESITE LA REFERENCIA AL OBJ it")
+    val udemy: School
+    udemy = School().apply {
+        numCode = "431".also { //obj it
+            println("y tambien, notifica que el codigo de la escuela nueba es: $it")
+
+        }
+    }
 }
 
-private fun setValueforLateinit(): Boolean
+//FUNCION PARA let
+private fun createSchool(): School? = School("Nacho", "Calle Don Bosco pep 255")
+
+
+
+    //FUNCION PARA LATEINIT
+private fun setValueforLateinit(): Boolean {
+    lateinitGlobal = "gLateinitKotlin"
+        return lateinitGlobal.isNotEmpty()
+}
 
 private infix fun String.toMixCase(firstUpper: Boolean): String{
     var mixString = ""
