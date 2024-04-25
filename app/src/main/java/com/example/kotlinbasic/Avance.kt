@@ -3,6 +3,7 @@ package com.example.kotlinbasic
 import java.util.EnumSet
 
 private var nullStrGlobal: String? = null
+private lateinit var lateinitGlobal:  String
 
 fun main(){
     newTopic("Metodo de String")
@@ -135,7 +136,15 @@ fun main(){
     println(name.toUpperCase())
     println(name.toLowerCase())
     println(name.toMixCase(true))
+
+    //Variables que pueden inicializars de forma tardia
+    //LAZY AND LATEINIT
+    newTopic("Asignacion tardia lateinit")
+    subTopic("Lateinit SOLO SE APLICAN A VARIABLES GLOBALES, NOS PERMITE DECLARAR UNA VARIABLE QUE DE MOMENTO NO PUEDE CONTENER VALOR")
+
 }
+
+private fun setValueforLateinit(): Boolean
 
 private infix fun String.toMixCase(firstUpper: Boolean): String{
     var mixString = ""
