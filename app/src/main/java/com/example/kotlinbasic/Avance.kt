@@ -87,11 +87,56 @@ fun main(){
     var obj: Any = "Kotlin course" //DE TIPO Any SIGNIFICA QUE PUEDE SER DE CALQUIER TICO QUE EXISTE
     //println(obj.toString().toInt() * b)
     val objNum: Any = 3
-    if (objNum is Int) { //KOTLIN CMBIERTE DE MANERA TEMPORAL EL VALOR DE Any
+    if (objNum is Int) { //KOTLIN COMBIERTE DE MANERA TEMPORAL EL VALOR DE Any
         println(objNum.toString().toInt() * b) //ACA MULTIPLICAMOS EL VALOR DE obj POR EL INGRESO DE a y b
     }else {
         println("obj no es un numero")
     }
+
+    //TRY CATCH FINALY
+    subTopic("Try Catch Finaly: try ES EL INTENTO DE EJECUTAR Y catch SE ENCARGA DE ATRAPAR CUALQUIER ERROR QUE SE GENERE ENTRE EL try")
+    obj = 3
+    try {
+        println(obj.toString().toInt() * b)
+        println("Obj es un numero y esta es la ultima linea del try")
+    } catch (e: Exception){
+        println(e)
+        println("Mensaje personalizado para el error en catch")
+    }finally { //finaly siempre se ejecuta con o sin error
+        println("Try catch finalizado...")
+    }
+
+    //UNSAFE CAST & SAFE CAST
+    subTopic("Unsafe cast")
+    obj = "true"
+    val unsafeStr: String = obj as String
+    println(unsafeStr)
+    subTopic("Safe cast")
+    obj = true
+    val safeStr = obj as? String
+    println(safeStr)
+
+    //THROW de manera segura Ctrl + Alt + T
+    subTopic("Throw")
+    val job = "Designer"
+    checkType(job) //ESTO ES UN METODO QUE RECIBE A job
+    try {
+        checkType(b)
+    } catch (e: Exception) {
+        println(e)
+    } finally {
+        println("Tarea finalizada")
+    }
+}
+
+//FUNCION PARA THROW
+private fun checkType(value: Any) {
+    if (value is String){
+        println("String valido")
+    }else{
+        throw TypeCastException("No es STR")
+    }
+
 }
 
 
