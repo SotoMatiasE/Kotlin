@@ -207,11 +207,29 @@ fun main(){
 
         }
     }
+
+    //Tarea
+    subTopic("Tarea Kotlin Advance")
+    var num: Any?
+    num = 5.0
+    safeTask(num)
+    num = null
+    safeTask(num)
+    num = "J"
+    safeTask(num)
+
+}
+//Funcion para Tarea
+fun safeTask(num: Any?) {
+    try {
+        if (num is Double) println("num: ${num.toDouble()}")
+    } catch (e: Exception){
+        println("num no es un número")
+    }
 }
 
 //FUNCION PARA let
 private fun createSchool(): School? = School("Nacho", "Calle Don Bosco pep 255")
-
 
 
     //FUNCION PARA LATEINIT
@@ -250,9 +268,7 @@ private fun checkType(value: Any) {
     }else{
         throw TypeCastException("No es STR")
     }
-
 }
-
 
 //FUNCION PRIVADA
 private fun showmessage(msg: String?){
@@ -266,8 +282,6 @@ private fun showmessage(msg: String?){
     if (nullStrGlobal!= null){
         println("g!! ${nullStrGlobal!!.get(0)}" )
     }
-
-
 }
 
 
